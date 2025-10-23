@@ -1,3 +1,5 @@
+import { showTable } from "./showTable.js";
+
 document.querySelector("#pgWelcome").style.display = "block";
 
 function fnNextScreen(pgHide, pgShow) {
@@ -283,25 +285,40 @@ function fnTavern(currParty){
         And every Cell (column) is a <td> </td> (Table Data)
          These won't change, but the in-between content WILL
     */
-    document.querySelector("#pTvnParty").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod;'>" + 
-            myParty.cMain.cName +
-            "<br>STR: " + myParty.cMain.cStr +
-            "<br>SPD: " + myParty.cMain.cSpd +
-            "<br>LUK: " + myParty.cMain.cLuck +
+    // document.querySelector("#pTvnParty").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod;'>" + 
+    //         myParty.cMain.cName +
+    //         "<br>STR: " + myParty.cMain.cStr +
+    //         "<br>SPD: " + myParty.cMain.cSpd +
+    //         "<br>LUK: " + myParty.cMain.cLuck +
 
-            "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" + 
-            myParty.cComp01.cName +
-            "<br>STR: " + myParty.cComp01.cStr +
-            "<br>SPD: " + myParty.cComp01.cSpd +
-            "<br>LUK: " + myParty.cComp01.cLuck +
+    //         "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" + 
+    //         myParty.cComp01.cName +
+    //         "<br>STR: " + myParty.cComp01.cStr +
+    //         "<br>SPD: " + myParty.cComp01.cSpd +
+    //         "<br>LUK: " + myParty.cComp01.cLuck +
 
-            "</td><td style='padding-left: 0.5em;'>" + 
-            myParty.cComp02.cName +
-            "<br>STR: " + myParty.cComp02.cStr +
-            "<br>SPD: " + myParty.cComp02.cSpd +
-            "<br>LUK: " + myParty.cComp02.cLuck +
+    //         "</td><td style='padding-left: 0.5em;'>" + 
+    //         myParty.cComp02.cName +
+    //         "<br>STR: " + myParty.cComp02.cStr +
+    //         "<br>SPD: " + myParty.cComp02.cSpd +
+    //         "<br>LUK: " + myParty.cComp02.cLuck +
     
-        "</td></tr></table>"; // END <table> of Party
+    //     "</td></tr></table>"; // END <table> of Party
+
+    const partyTable = showTable(
+        [myParty.cMain, myParty.cComp01, myParty.cComp02],
+        [
+            { label: 'cName' },
+            { name: 'STR', label: 'cStr' },
+            { name: 'SPD', label: 'cSpd' },
+            { name: 'LUK', label: 'cLuck' }
+        ]
+    );
+
+    const partyContainer = document.querySelector('#pTvnParty');
+    partyContainer.innerHTML = ''; // clear any existing content
+    partyContainer.appendChild(partyTable);
+
 
     // Actions to take in this screen via a <form> - populate a drop down menu with myParty members
     // First create the <form> and all <options> based on myParty. Keep it in #pTvnParty and make sure it's +=
@@ -347,22 +364,36 @@ function fnTavern(currParty){
         fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats),
         fnGenArray(arrWeapons), fnGenArray(arrClasses), "Normal");
 
-    document.querySelector("#pTvnEnemy").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; border-left: 2px solid goldenrod; padding-left: 0.5em;'>" +
-            tvEnemy01.eType +
-            "<br>" + tvEnemy01.eClass +
-        "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" +
-            tvEnemy02.eType +
-            "<br>" + tvEnemy02.eClass +
-        "</td><td style='padding-left: 0.5em; border-right: 2px solid goldenrod;'>" +
-            tvEnemy03.eType +
-            "<br>" + tvEnemy03.eClass +
-    "</td></tr></table>"; // END <table> of Enemies
+    // document.querySelector("#pTvnEnemy").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; border-left: 2px solid goldenrod; padding-left: 0.5em;'>" +
+    //         tvEnemy01.eType +
+    //         "<br>" + tvEnemy01.eClass +
+    //     "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" +
+    //         tvEnemy02.eType +
+    //         "<br>" + tvEnemy02.eClass +
+    //     "</td><td style='padding-left: 0.5em; border-right: 2px solid goldenrod;'>" +
+    //         tvEnemy03.eType +
+    //         "<br>" + tvEnemy03.eClass +
+    // "</td></tr></table>"; // END <table> of Enemies
+
+    const enemyTable = showTable(
+        [tvEnemy01, tvEnemy02, tvEnemy03],
+        [
+            { label: 'eType' },
+            { label: 'eClass' }
+        ],
+    );
+
+    const enemyContainer = document.querySelector('#pTvnEnemy');
+    enemyContainer.innerHTML = '';
+    enemyContainer.appendChild(enemyTable);
     
+
 }; // END fnTavern()
 
 
 // Universal game initializer subroutine
 function fnGameInit(){
+    
     console.log("fnGameInit() is running");
     document.querySelector("#pgWelcome").style.display = "block";
     
@@ -390,6 +421,14 @@ function fnGameInit(){
         
     }; // END If..Else()
 }; // END fnGameInit()
+
+// Make inner functions global so HTML can access them
+window.fnNextScreen = fnNextScreen;
+window.fnCharCreate = fnCharCreate;
+window.fnGenArray = fnGenArray;
+window.fnGameLoad = fnGameLoad;
+window.fnNavQuest = fnNavQuest;
+window.fnTavern = fnTavern;
 
 // Initialize the game
 fnGameInit();
