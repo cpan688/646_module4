@@ -34,9 +34,9 @@ let valinCreateGameName = document.querySelector("#inCreateGameName").value;
 let valinCreateGameEmail = document.querySelector("#inCreateGameEmail").value;
 console.log(valinCreateGameName, valinCreateGameEmail);
 
+// Validate that BOTH name and email have been entered - if not, display a warning message and loop back for input
 if ((valinCreateGameName != null && valinCreateGameName !="") &&
     (valinCreateGameEmail != null && valinCreateGameEmail != "")) 
- 
   {
     document.querySelector("#pGameInputWarning").style.display = "none";
 
@@ -79,63 +79,33 @@ if ((valinCreateGameName != null && valinCreateGameName !="") &&
     document.querySelector("#pCreateGameInputs").style.display = "none";
     document.querySelector("#pCreateGameControls").style.display = "block";
 
-    // PartyMember(cName, cHP, cStr, cSpd, cMp, cLuck, cWep, cClass)
-    document.querySelector("#spnCreateGameOutput").innerHTML = "Name: " + tmpMainCharacter.cName;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Hit Points: " + tmpMainCharacter.cHP;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Strength: " + tmpMainCharacter.cStr;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpMainCharacter.cSpd;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Magic: " + tmpMainCharacter.cMp;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Luck: " + tmpMainCharacter.cLuck;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpMainCharacter.cWep;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Class: " + tmpMainCharacter.cClass;
+    // // PartyMember(cName, cHP, cStr, cSpd, cMp, cLuck, cWep, cClass)
+    // document.querySelector("#spnCreateGameOutput").innerHTML = "Name: " + tmpMainCharacter.cName;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Hit Points: " + tmpMainCharacter.cHP;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Strength: " + tmpMainCharacter.cStr;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpMainCharacter.cSpd;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Magic: " + tmpMainCharacter.cMp;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Luck: " + tmpMainCharacter.cLuck;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpMainCharacter.cWep;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Class: " + tmpMainCharacter.cClass;
 
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>Companion 01: "+ tmpCompanion01.cName;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Hit Points: " + tmpCompanion01.cHP;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Strength: " + tmpCompanion01.cStr;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpCompanion01.cSpd;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Magic: " + tmpCompanion01.cMp;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Luck: " + tmpCompanion01.cLuck;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpCompanion01.cWep;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Class: " + tmpCompanion01.cClass;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>Companion 01: "+ tmpCompanion01.cName;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Hit Points: " + tmpCompanion01.cHP;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Strength: " + tmpCompanion01.cStr;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpCompanion01.cSpd;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Magic: " + tmpCompanion01.cMp;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Luck: " + tmpCompanion01.cLuck;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpCompanion01.cWep;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Class: " + tmpCompanion01.cClass;
 
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>Companion 02: "+ tmpCompanion02.cName;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Hit Points: " + tmpCompanion02.cHP;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Strength: " + tmpCompanion02.cStr;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpCompanion02.cSpd;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Magic: " + tmpCompanion02.cMp;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Luck: " + tmpCompanion02.cLuck;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpCompanion02.cWep;
-    document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Class: " + tmpCompanion02.cClass;
-
-    //======================================================================================================
-        // document.querySelector("#pCreateGameInputs").style.display = "none";
-        // document.querySelector("#pCreateGameControls").style.display = "block";
-        
-        // document.querySelector("#spnCreateGameOutput").innerHTML = "Your party is ready. Let's go!"
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>-------------------";
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Name: " + tmpMainCharacter.cName;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>HP: " + tmpMainCharacter.cHP;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>MP: " + tmpMainCharacter.cMp;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpMainCharacter.cSpeed;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpMainCharacter.cWep;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Pet: " + tmpMainCharacter.cPet;
-
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>-------------------";
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Companion #1: " + tmpCompanion01.cName;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>HP: " + tmpCompanion01.cHP;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>MP: " + tmpCompanion01.cMp;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpCompanion01.cSpeed;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpCompanion01.cWep;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Pet: " + tmpCompanion01.cPet;
-
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>-------------------";
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Companion #2: " + tmpCompanion02.cName;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>HP: " + tmpCompanion02.cHP;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>MP: " + tmpCompanion02.cMp;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpCompanion02.cSpeed;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpCompanion02.cWep;
-        // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Pet: " + tmpCompanion02.cPet;
-    //======================================================================================================
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br><br>Companion 02: "+ tmpCompanion02.cName;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Hit Points: " + tmpCompanion02.cHP;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Strength: " + tmpCompanion02.cStr;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Speed: " + tmpCompanion02.cSpd;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Magic: " + tmpCompanion02.cMp;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Luck: " + tmpCompanion02.cLuck;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Weapon: " + tmpCompanion02.cWep;
+    // document.querySelector("#spnCreateGameOutput").innerHTML += "<br>Class: " + tmpCompanion02.cClass;
 
     // "Join" this Party internally
     let tmpParty = {
@@ -146,6 +116,24 @@ if ((valinCreateGameName != null && valinCreateGameName !="") &&
         "cComp02" : tmpCompanion02
     }; // END of complete party in JSON
     console.log(tmpParty);
+
+    // Display the party of one main character and two companions in a table format
+    const partyTable = showTable(
+        [tmpParty.cMain, tmpParty.cComp01, tmpParty.cComp02],
+        [
+            { label: 'cHP', name: 'Hit Points' },
+            { label: 'cStr', name: 'Strength' },
+            { label: 'cSpd', name: 'Speed' },
+            { label: 'cMp', name: 'Magic' },
+            { label: 'cLuck', name: 'Luck' },
+            { label: 'cWep', name: 'Weapon' },
+            { label: 'cClass', name: 'Class' }
+        ],
+        'cName', 'name');
+    const partyContainer = document.querySelector('#spnCreateGameOutput');
+    partyContainer.innerHTML = ''; // clear any existing content
+    partyContainer.appendChild(partyTable);
+
 
     // SAVE THE PARTY PERMANENTLY VIA localStorage, first, check if anything has been previously saved
     let tmpAllEmails =  JSON.parse(localStorage.getItem("allEmails"));
@@ -243,14 +231,10 @@ function fnNavQuest(pgHide, pgShow, currParty) {
     document.querySelector(pgHide).style.display = "none";
     document.querySelector(pgShow).style.display = "block";
     
-    // Now, initialize the current screen based on navigation/party/state/etc
-    // Conditional Statement to know which screen to initialize
-    // If..Else   ---  For(){}  --- Switch(){}
-    // Test (check/switch) between Parameter of this function
+    // Switch screen based on parameter pgShow
     switch(pgShow){
         case "#pgTavern":
             console.log("About to initialize The Tavern");
-            // Run a function to initialize a certain screen, commanded by the Current Party
             fnTavern(currParty);
             break;
         case "#pgForest":
@@ -261,10 +245,9 @@ function fnNavQuest(pgHide, pgShow, currParty) {
             console.log("About to initialize The Lake");
             // fnLake(currParty);
             break;
-        // TO-DO: Add the other 10 levels; don't forget #
         default: 
             // Didn't match with any known possibility
-            console.log("What? ", pgShow);
+            console.log("Unknown screen? ", pgShow);
             break;
     }; // END switch()
 }; // END fnNavQuest()
@@ -279,42 +262,15 @@ function fnTavern(currParty){
 
     document.querySelector("#pTvnMsg").innerHTML = "Welcome travelers! Our Tavern is the oldest in the land. Perhaps try a Game of Strength, Game of Speed, or a Game of Luck? There are many willing participants to challenge!";
 
-    /*
-        An HTML Table has a parent <table> </table>
-        And every Row is a <tr> </tr>
-        And every Cell (column) is a <td> </td> (Table Data)
-         These won't change, but the in-between content WILL
-    */
-    // document.querySelector("#pTvnParty").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod;'>" + 
-    //         myParty.cMain.cName +
-    //         "<br>STR: " + myParty.cMain.cStr +
-    //         "<br>SPD: " + myParty.cMain.cSpd +
-    //         "<br>LUK: " + myParty.cMain.cLuck +
-
-    //         "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" + 
-    //         myParty.cComp01.cName +
-    //         "<br>STR: " + myParty.cComp01.cStr +
-    //         "<br>SPD: " + myParty.cComp01.cSpd +
-    //         "<br>LUK: " + myParty.cComp01.cLuck +
-
-    //         "</td><td style='padding-left: 0.5em;'>" + 
-    //         myParty.cComp02.cName +
-    //         "<br>STR: " + myParty.cComp02.cStr +
-    //         "<br>SPD: " + myParty.cComp02.cSpd +
-    //         "<br>LUK: " + myParty.cComp02.cLuck +
-    
-    //     "</td></tr></table>"; // END <table> of Party
-
+    // Display party members in a table format
     const partyTable = showTable(
         [myParty.cMain, myParty.cComp01, myParty.cComp02],
         [
-            { label: 'cName' },
-            { name: 'STR', label: 'cStr' },
-            { name: 'SPD', label: 'cSpd' },
-            { name: 'LUK', label: 'cLuck' }
-        ]
-    );
-
+            { label: 'cStr', name: 'STR' },
+            { label: 'cSpd', name: 'SPD' },
+            { label: 'cLuck', name: 'LUK' }
+        ],
+        'cName', 'name');
     const partyContainer = document.querySelector('#pTvnParty');
     partyContainer.innerHTML = ''; // clear any existing content
     partyContainer.appendChild(partyTable);
@@ -332,16 +288,17 @@ function fnTavern(currParty){
                 "</select>" +
         "</form></p>"; // END the <form> to pick a Party member
 
-    // Use .addEventListner() means Listen Form (wait for) an Event (action) - to get the selected character from the <form>
-    document.querySelector("#frmTvnSlctChar").addEventListener("change", function(){
+    
+        // Let player select a character to battle - Use addEventListner() to get the selected character from the drop down list
+        document.querySelector("#frmTvnSlctChar").addEventListener("change", function(){
             // Read the Values of what we selected
             let valSelTvnChar = document.querySelector("#selTvnChar");
             let valSelTvnCharObj = valSelTvnChar.options[valSelTvnChar.selectedIndex];
         
-            // After reading Who we picked, have them pick an Action (who to battle), via Conditional Statement
+            // Let player pick a battle action
             if(valSelTvnCharObj.value == 0){
                 console.log("true, we picked NOTHING");
-            }else{
+            } else {
                 console.log("false, we didn't pick nothing, web picked a character");
                 console.log("Which <td>", valSelTvnCharObj);
                 // NOTE: Alternate syntax to read a Stat:   myParty["cMain"].cLuck vs myParty.cMain.cLuck
@@ -352,8 +309,7 @@ function fnTavern(currParty){
             }; // END If..Else for Select
         }); // END .addEventListener on the <select>
 
-    // Generate Enemies
-    // Enemy constructor(eType, eHp, eStr, eSpd, eMp, eWep, eClass, eStatus){
+    // Generate Enemies - constructor(eType, eHp, eStr, eSpd, eMp, eWep, eClass, eStatus)
     let tvEnemy01 = new Enemy("Ogre", 
         fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats),
         fnGenArray(arrWeapons), fnGenArray(arrClasses), "Normal");
@@ -375,14 +331,17 @@ function fnTavern(currParty){
     //         "<br>" + tvEnemy03.eClass +
     // "</td></tr></table>"; // END <table> of Enemies
 
+    console.log(tvEnemy01, tvEnemy02, tvEnemy03 )
+    // (eType, eHp, eStr, eSpd, eMp, eWep, eClass, eStatus)
     const enemyTable = showTable(
         [tvEnemy01, tvEnemy02, tvEnemy03],
-        [
-            { label: 'eType' },
-            { label: 'eClass' }
+        [            
+            { label: 'eClass', name: 'Class' },
+            { label: 'eStr', name: 'STR' },
+            { label: 'eSpd', name: 'SPD' },
+            { label: 'eHp', name: 'HP' },
         ],
     );
-
     const enemyContainer = document.querySelector('#pTvnEnemy');
     enemyContainer.innerHTML = '';
     enemyContainer.appendChild(enemyTable);
