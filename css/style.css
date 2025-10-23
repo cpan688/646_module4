@@ -1,0 +1,67 @@
+:root {
+  --bg: forestgreen;
+  --bg2: black;
+  --primary:goldenrod;
+  --secondary: rgb(247, 247, 170);
+  --text: white; 
+  --text-2: rgb(39, 28, 187);
+  --accent: #104b48;
+  --accent-2: #eea722;
+  --border: rgba(255, 255, 255, 0.533);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --radius: 25px;
+  --ff:'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
+  --ff2: 'Courier New', Courier, monospace;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+section {
+    display: none;
+    background-color: var(--bg2);
+    font-family: var(--ff2);
+    font-size:110%; 
+    margin: 5px; /* OUTSIDE */
+    /* margin-left: 50px; */
+    padding: 25px; /* INSIDE */
+    border-radius: 25px;
+    color: var(--primary);
+}
+
+section#pgWelcome {
+    text-align: center;
+}
+
+section#pgWelcome header h1 {
+    line-height: 25%;
+}
+
+section#pgWelcome footer h4 {
+    margin-bottom: 1px;
+}
+
+/* 
+section#pgCreateGame {
+    color: brown;
+} 
+*/
+
+button {
+    background-color: var(--secondary);
+    border-color: var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-2);
+    margin: 5px;
+    padding: 5px;
+}
