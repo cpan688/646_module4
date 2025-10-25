@@ -8,8 +8,10 @@ export function showTable(data, fields, colHeading, rowHeading) {
     // === CREATE TABLE ===
     const table = document.createElement('table');
     table.style.borderCollapse = 'collapse';
-    table.style.margin = '0.5em 0';
-    table.style.width = '100%';
+    table.style.margin = '0em 0';
+    table.style.width = '50%';
+    // table.style.margin = '0.5em 0';
+    // table.style.width = '100%';
     table.style.textAlign = 'center';
 
     // === HEADER ROW ===
@@ -58,6 +60,8 @@ export function showTable(data, fields, colHeading, rowHeading) {
             valCell.style.padding = defaultPadding;
             valCell.style.backgroundColor = '#111';
             valCell.style.color = '#eee';
+            // Add responsive label (for mobile view)
+            valCell.setAttribute('data-label', field.name || field.label);
             row.appendChild(valCell);
         });
 

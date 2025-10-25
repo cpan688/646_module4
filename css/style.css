@@ -65,3 +65,75 @@ button {
     margin: 5px;
     padding: 5px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.65em;
+}
+
+th, td {
+  /* padding: 0.4em 0.6em; */
+  padding: 0.2em 0.3em;
+  border: 1px solid goldenrod;
+  text-align: center;
+}
+
+th {
+  background-color: #333;
+  color: goldenrod;
+}
+
+td {
+  background-color: #111;
+  color: #eee;
+}
+
+/* === Responsive layout for mobile === */
+/* @media (max-width: 600px) { */
+@media (max-width: 300px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    display: none; /* hide header row on mobile */
+  }
+
+  tr {
+    margin-bottom: 0.5em;
+    /* margin-bottom: 0.8em; */
+    border: 1px solid goldenrod;
+    border-radius: 0.5em;
+    overflow: hidden;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 25%;
+    /* padding-left: 50%; */
+    position: relative;
+    border: none;
+    border-bottom: 1px solid goldenrod;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.2em;
+    /* left: 0.5em; */
+    width: 45%;
+    padding-left: 0.2em;
+    /* padding-left: 0.3em; */
+    font-weight: bold;
+    text-align: left;
+    color: goldenrod;
+  }
+
+  td:first-child {
+    text-align: left;
+    background-color: #222;
+    color: goldenrod;
+    border-bottom: 2px solid goldenrod;
+  }
+}
