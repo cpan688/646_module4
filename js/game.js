@@ -1,7 +1,5 @@
 import { showTable } from "./showTable.js";
 
-
-
 function fnNavMenus(pgHide, pgShow) {
     console.log("fnNavMenus() is running");
     console.log("Coming from: " + pgHide);
@@ -221,7 +219,7 @@ function fnTavern(currParty){
     let myParty = JSON.parse(localStorage.getItem(currParty));
     console.log(myParty);
 
-    document.querySelector("#pTvnMsg").innerHTML = "Welcome travelers!<br> Try a Game of Strength, Game of Speed, or a Game of Luck?<br> There are many willing participants to challenge!";
+    document.querySelector("#pTvnMsg").innerHTML = "Welcome travelers!<br> Try a Game of Strength, Game of Speed, or a Game of Luck? There are many willing participants to challenge!";
 
     // Display party members in a table format
     const partyTable = showTable(
@@ -347,7 +345,7 @@ function fnTavern(currParty){
                     document.querySelector("#pTvnResults").innerHTML = "<p>You decided on a race off. I hope your SPD is worthy enough!</p>" +
                         "<table style='margin: auto;'><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod;'>" + 
                             currHero.cName + 
-                            "<br>STR: " + currHero.cSpd +
+                            "<br>SPD: " + currHero.cSpd +
                         "</td> <td style='padding-left: 0.5em; border-left: 2px solid goldenrod;'>" + 
                             tvEnemy02.eType + 
                             "<br>" + tvEnemy02.eClass +
@@ -417,7 +415,7 @@ function fnTavern(currParty){
                     document.querySelector("#pTvnResults").innerHTML = "<p>You decided to gamble your luck. I hope your LUK is worthy enough!</p>" +
                         "<table style='margin: auto;'><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod;'>" + 
                             currHero.cName + 
-                            "<br>STR: " + currHero.cLuck +
+                            "<br>LUK: " + currHero.cLuck +
                         "</td> <td style='padding-left: 0.5em; border-left: 2px solid goldenrod;'>" + 
                             tvEnemy03.eType + 
                             "<br>" + tvEnemy03.eClass +
@@ -477,26 +475,6 @@ function fnTavern(currParty){
             }; // END If..Else for Selecting a character
         }); // END .addEventListener on the <select>
 
-    // let tvEnemy01 = new Enemy("Ogre", 
-    //     fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats),
-    //     fnGenArray(arrWeapons), fnGenArray(arrClasses), "Normal");
-    // let tvEnemy02 = new Enemy("Goblin",   
-    //     fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats),
-    //     fnGenArray(arrWeapons), fnGenArray(arrClasses), "Normal");
-    // let tvEnemy03 = new Enemy("Troll",   
-    //     fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats),
-    //     fnGenArray(arrWeapons), fnGenArray(arrClasses), "Normal");
-    // document.querySelector("#pTvnEnemy").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; border-left: 2px solid goldenrod; padding-left: 0.5em;'>" +
-    //         tvEnemy01.eType +
-    //         "<br>" + tvEnemy01.eClass +
-    //     "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" +
-    //         tvEnemy02.eType +
-    //         "<br>" + tvEnemy02.eClass +
-    //     "</td><td style='padding-left: 0.5em; border-right: 2px solid goldenrod;'>" +
-    //         tvEnemy03.eType +
-    //         "<br>" + tvEnemy03.eClass +
-    // "</td></tr></table>"; // END <table> of Enemies
-
     // Generate enemies
     let tvEnemy01 = new Enemy("Ogre", 
         fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats), fnGenArray(arrStats),
@@ -516,10 +494,20 @@ function fnTavern(currParty){
             { label: 'eSpd', name: 'SPD' },
             { label: 'eHp', name: 'HP' },
         ],
-    );
+        'eType', 'name');
     const enemyContainer = document.querySelector('#pTvnEnemy');
     enemyContainer.innerHTML = '';
     enemyContainer.appendChild(enemyTable);
+    // document.querySelector("#pTvnEnemy").innerHTML = "<table><tr><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; border-left: 2px solid goldenrod; padding-left: 0.5em;'>" +
+    //         tvEnemy01.eType +
+    //         "<br>" + tvEnemy01.eClass +
+    //     "</td><td style='padding-right: 0.5em; border-right: 2px solid goldenrod; padding-left: 0.5em;'>" +
+    //         tvEnemy02.eType +
+    //         "<br>" + tvEnemy02.eClass +
+    //     "</td><td style='padding-left: 0.5em; border-right: 2px solid goldenrod;'>" +
+    //         tvEnemy03.eType +
+    //         "<br>" + tvEnemy03.eClass +
+    // "</td></tr></table>"; // END <table> of Enemies
 
     
 }; // END fnTavern()
@@ -542,7 +530,7 @@ function fnGameInit(){
         console.log("FALSE we do NOT have an EMPTY save slot");
         document.querySelector("#pLGPartyMessage").innerHTML = "Welcome back! Soldier on!";
         document.querySelector("#spnLGPartyTotals").innerHTML = tmpGamesAll.length;
-        document.querySelector("#pLGPartySelect").innerHTML = "&nbsp;<br>";
+        document.querySelector("#pLGPartySelect").innerHTML = "&nbsp;";
 
         // Show the Saved Games (Parties) to select from
         for(let i = 0; i < tmpGamesAll.length; i++){
