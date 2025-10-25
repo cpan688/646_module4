@@ -20,8 +20,8 @@
              Welcome, adventurer! Let's go on our first quest. Either continue an old adventure, or head over to the Oracle to build your party. 
             </p>
             <p>
-             <button onclick="fnNextScreen('#pgWelcome', '#pgLoadGame');">Load Game</button>  
-             <button onclick="fnNextScreen('#pgWelcome', '#pgCreateGame');">New Game</button>
+             <button onclick="fnNavMenus('#pgWelcome', '#pgLoadGame');">Load Game</button>  
+             <button onclick="fnNavMenus('#pgWelcome', '#pgCreateGame');">New Game</button>
             </p>
         </main>
         <footer>
@@ -32,17 +32,13 @@
     <section id="pgLoadGame">
         <header>
             <h1> 
-                <button onclick="fnNextScreen('#pgLoadGame', '#pgWelcome');">Back</button>
+                <button onclick="fnNavMenus('#pgLoadGame', '#pgWelcome');">Back</button>
                 Load Game
             </h1>
         </header>
         <main>
-            <p id="pLGPartyMessage">
-                &nbsp;
-            </p>
-            <p id="pLGPartySelect">
-                &nbsp;
-            </p>
+            <p id="pLGPartyMessage">&nbsp;</p>
+            <p id="pLGPartySelect">&nbsp;</p>
         </main>
         <footer>
             <br><br><h4>Total Saves: <span id="spnLGPartyTotals">&nbsp;</span></h4>
@@ -51,12 +47,12 @@
 
     <section id="pgCreateGame">
         <header>
-            <h1><button onclick="fnNextScreen('#pgCreateGame', '#pgWelcome');">BACK</button> Create Game</h1>
+            <h1><button onclick="fnNavMenus('#pgCreateGame', '#pgWelcome');">BACK</button> Create Game</h1>
         </header>
         <main>
             <p> The Oracle must know a little bit about you, so that she can assess your skill levels. </p>
             <p id="pGameInputWarning" style="display: none;">
-                You must enter both name and email.
+                Error - You must enter both name and email.
             </p>
             <p id="pCreateGameInputs">
                 <label>Name: </label><input id="inCreateGameName"><br><br>
@@ -65,11 +61,10 @@
             </p>
             <p style="display: none;" id="pCreateGameControls">
                 <span id="spnCreateGameOutput">&nbsp;</span>
-                <br><br><button onclick="fnNextScreen('#pgCreateGame', '#pgTavern');">Start Quest</button>
             </p>
         </main>
         <footer>
-            <h4>Support | Contact | Account</h4>
+            <h4>Contact</h4>
         </footer>
     </section> <!-- END #pgCreateGame -->
 
@@ -79,14 +74,14 @@
         </header>
         <main>
             <!-- Placeholders to display message, party info, enemy/NPC info, "results" -->
-            <p id="pTvnMsg">&nbsp; Msg</p>
-            <p id="pTvnParty">&nbsp; Party</p>
-            <p id="pTvnAction">&nbsp; Actions</p>
-            <p id="pTvnEnemy">&nbsp; Enemies</p>
-            <p id="pTvnResults">&nbsp; Result</p>
+            <p id="pTvnMsg">&nbsp;</p>
+            <p id="pTvnParty">&nbsp;</p>
+            <p id="pTvnAction">&nbsp;</p>
+            <p id="pTvnEnemy">&nbsp;</p>
+            <p id="pTvnResults">&nbsp;</p>
         </main>
-        <footer>
-            <h4>Save | Load | Quit</h4>
+        <footer style="text-align: center;">
+            <h4>Load | Quit</h4>
         </footer>
     </section> <!-- END #pgTavern -->
 
@@ -102,8 +97,8 @@
             <p id="pFstEnemy">&nbsp; Enemies</p>
             <p id="pFstResults">&nbsp; Result</p>
         </main>
-        <footer>
-            <h4>Save | Load | Quit</h4>
+        <footer style="text-align: center;">
+            <h4>Load | Quit</h4>
         </footer>
     </section> <!-- END #pgForest -->
 

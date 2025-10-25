@@ -49,11 +49,7 @@ section#pgWelcome footer h4 {
     margin-bottom: 1px;
 }
 
-/* 
-section#pgCreateGame {
-    color: brown;
-} 
-*/
+section#pgTavern { text-align: center; }
 
 button {
     background-color: var(--secondary);
